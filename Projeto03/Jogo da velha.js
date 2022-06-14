@@ -1,78 +1,89 @@
 const prompt = require('prompt-sync')();
+while(true){
 console.clear();
+console.log("Bem vindo ao jogo da velha!");
+prompt("Aperte enter pra continuar");
+console.log("As regras são simples, se você fizer uma sequencia de 3 simbolos iguais");
+console.log();
+console.log("na diagonal, horizontal ou vertical, você ganhará o jogo");
+prompt("Podemos começar? Digite enter para continuar");
 
 let velha = [0,1,2,3,4,5,6,7,8];
-    let ticTacToe = [[], [], []];
-    ticTacToe[2][2] = undefined;
+    let layoutjogodavelha = [[], [], []];
+    layoutjogodavelha[2][2] = undefined;
     let ticTacToeLayout = '';
 function updateLayout() {
-  ticTacToeLayout = `${displayItem(ticTacToe[0][0])} | ${displayItem(
-      ticTacToe[0][1],
-  )} | ${displayItem(ticTacToe[0][2])}
+  ticTacToeLayout = `${conjunto(layoutjogodavelha[0][0])} | ${conjunto(
+      layoutjogodavelha[0][1],
+  )} | ${conjunto(layoutjogodavelha[0][2])}
 ---------
-${displayItem(ticTacToe[1][0])} | ${displayItem(
-      ticTacToe[1][1],
-  )} | ${displayItem(ticTacToe[1][2])}
+${conjunto(layoutjogodavelha[1][0])} | ${conjunto(
+      layoutjogodavelha[1][1],
+  )} | ${conjunto(layoutjogodavelha[1][2])}
 ---------
-${displayItem(ticTacToe[2][0])} | ${displayItem(
-      ticTacToe[2][1],
-  )} | ${displayItem(ticTacToe[2][2])}`;
+${conjunto(layoutjogodavelha[2][0])} | ${conjunto(
+      layoutjogodavelha[2][1],
+  )} | ${conjunto(layoutjogodavelha[2][2])}`;
 }
 
-function displayItem(item) {
+function conjunto(item) {
   return item === undefined ? ' ' : item;
 }
-displayItem();
+conjunto();
 updateLayout();
 console.log();
 
-const jogodavelha = Array(9).fill(undefined);
+let jogodavelha = Array(9).fill(undefined);
 let vitoria = false;
 let vencedor;
-
-let jogada = "x";
-
+let jogador1 = prompt("Digite seu nome você jogará com o x: ");
+let jogador2 = prompt("Digite seu nome você jogará com o O: ");
+let jogada1 = "x"
+let vitoriao=0;
+let vitoriax=0; 
+console.log();
+let rodadas = prompt("Digite quantas rodadas deseja jogar: ");
+console.log();
+while(rodadas>0){
 while(!vitoria){
-
-console.log(`É a vez do jogador ${jogada}`);
-
-const coordenada = +prompt(`Digite onde deseja marcar a sua jogada (0 e 8): `);
+console.log();
+const coordenada = +prompt(` X Digite onde deseja marcar a sua jogada (0 e 8): `);
         velha[coordenada] = 10;
         console.log();
-        if (coordenada == '0' && ticTacToe[0][0] == undefined) {
-            (ticTacToe[0][0] = jogada), displayItem();
+        if (coordenada == '0' && layoutjogodavelha[0][0] == undefined) {
+            (layoutjogodavelha[0][0] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '1' && ticTacToe[0][1] == undefined) {
-            (ticTacToe[0][1] = jogada), displayItem();
+        } else if (coordenada == '1' && layoutjogodavelha[0][1] == undefined) {
+            (layoutjogodavelha[0][1] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '2' && ticTacToe[0][2] == undefined) {
-            (ticTacToe[0][2] = jogada), displayItem();
+        } else if (coordenada == '2' && layoutjogodavelha[0][2] == undefined) {
+            (layoutjogodavelha[0][2] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '3' && ticTacToe[1][0] == undefined) {
-            (ticTacToe[1][0] = jogada), displayItem();
+        } else if (coordenada == '3' && layoutjogodavelha[1][0] == undefined) {
+            (layoutjogodavelha[1][0] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '4' && ticTacToe[1][1] == undefined) {
-            (ticTacToe[1][1] = jogada), displayItem();
+        } else if (coordenada == '4' && layoutjogodavelha[1][1] == undefined) {
+            (layoutjogodavelha[1][1] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '5' && ticTacToe[1][2] == undefined) {
-            (ticTacToe[1][2] = jogada), displayItem();
+        } else if (coordenada == '5' && layoutjogodavelha[1][2] == undefined) {
+            (layoutjogodavelha[1][2] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '6' && ticTacToe[2][0] == undefined) {
-            (ticTacToe[2][0] = jogada), displayItem();
+        } else if (coordenada == '6' && layoutjogodavelha[2][0] == undefined) {
+            (layoutjogodavelha[2][0] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '7' && ticTacToe[2][1] == undefined) {
-            (ticTacToe[2][1] = jogada), displayItem();
+        } else if (coordenada == '7' && layoutjogodavelha[2][1] == undefined) {
+            (layoutjogodavelha[2][1] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
-        } else if (coordenada == '8' && ticTacToe[2][2] == undefined) {
-            (ticTacToe[2][2] = jogada), displayItem();
+        } else if (coordenada == '8' && layoutjogodavelha[2][2] == undefined) {
+            (layoutjogodavelha[2][2] = jogada1), conjunto();
             updateLayout();
             console.log(ticTacToeLayout);
         }
@@ -90,9 +101,9 @@ if (jogodavelha[coordenada]){
   continue
 }
 
-jogodavelha[coordenada]= jogada;
+jogodavelha[coordenada]= jogada1;
 
-jogada = jogada ==="x"? "o" : "x"; 
+jogada1 = jogada1 ==="x"? "o" : "x"; 
 
 const coordenadasvazias = jogodavelha.filter(Boolean).length;
 
@@ -125,24 +136,56 @@ for (const condicaodevitoria of condicoesdevitoria){
 
     if(jogodavelha[a] && jogodavelha[a]=== jogodavelha[b] && jogodavelha[a]=== jogodavelha[c]){
       vitoria = true;
-      vencedor = jogada;
+      vencedor = jogada1;
       break;
     }
-
 }
 
 }
 
-if (vitoria){
-  console.log(`O jogador venceu a partida`);
-} else {
+if (vencedor==="o"){
+  console.log();
+  console.log(`O vencedor da rodada é o  jogador com a opção x`);
+  vitoriao++
+} else if(vencedor === "x"){
+  console.log();
+  console.log(`O vencedor da rodada é o jogador com a opção O`);
+  vitoriax++
+}
+else {
+  console.log("A rodada terminou empatada");
+}
+
+  layoutjogodavelha = [[], [], []]
+  jogodavelha = Array(9).fill(undefined);
+  jogada1 = "x"
+
+vitoria = false
+rodadas--
+}
+if(vitoriao>vitoriax){
+  console.log();
+  console.log(`Parabéns ${jogador1} você foi o grande vencedor com ${vitoriao} pontos`);
+}else if (vitoriax>vitoriao){
+  console.log();
+  console.log(`Parabéns ${jogador2} você foi o grande vencedor com ${vitoriax} pontos`);
+}else{
+  console.log();
   console.log("A partida terminou empatada");
 }
-
-
-
-
-
+console.log();
+let jogarnovamente = prompt(`Jogo finalizado. Deseja jogar novamente? `);
+while(jogarnovamente!= "sim"&&jogarnovamente!="nao"){
+  jogarnovamente=prompt("Digite apenas sim ou nao por favor.");
+}
+    if (jogarnovamente == `sim`) {
+        continue;
+    } else if (jogarnovamente == `nao`){
+        console.log();
+        console.log(`Muito obrigado por ter jogado, até a próxima!`);
+        break;
+    }
+}
 
 
 
