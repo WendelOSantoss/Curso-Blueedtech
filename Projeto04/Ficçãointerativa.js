@@ -232,3 +232,22 @@ if (escolha1 == "2"){
 
     Porém por ter ignorado o guarda encontra vários soldados alertados por ele que estavam à sua espera e acaba morto encerrando sua jornada sem conseguir salvar sua amada princesa.");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
