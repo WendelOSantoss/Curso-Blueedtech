@@ -64,7 +64,7 @@ if (escolha1 == "1"){
             escolha4 = +prompt("Escolha entre opção 1 ou 2 ")
             }
             if (escolha4 == "1"){
-                console.log("Depois de uma longa jornada você chegou à torre onde tudo indica estar a princesa. Porém por ter ignorado o guarda encontra vários soldados alertados por ele que estavam à sua espera e acaba morto encerrando sua jornada sem conseguir salvar sua amada princesa.");
+                console.log("Depois de uma longa jornada você chegou à torre onde tudo indica estar a princesa.")
             }
             else if (escolha4 == "2"){
                 console.log(`Você trava uma intensa batalha com o guarda, porém por se tratar de um soldado iniciante você consegue abate-lo facilmente usando sua espada. E segue rumo à torre onde está a princesa.`);
@@ -80,7 +80,8 @@ if (escolha1 == "1"){
     }
 
     else if (escolha2 == "2"){
-        console.log(`Você consegue adentrar o posto avançado porém é visto por um guarda e precisa tomar uma difícil decisão.
+        console.log(`Você consegue adentrar o posto avançado porém é visto
+         por um guarda e precisa tomar uma difícil decisão.
         1. Fugir e voltar ao posto em outro momento em busca de pistas.
         2. Enfrentar o guarda antes que seja possível ele alertar os companheiros.`);
         let escolha5 = +prompt("Escolha entre opção 1 ou 2 ");
@@ -98,15 +99,15 @@ if (escolha1 == "1"){
             escolha6 = +prompt("Escolha entre opção 1 ou 2 ");
             }
             if(escolha6=="1"){
-                console.log(`Você adentra o posto avançado, porém ao chegar no escritório do capitão dos capangas percebe dois guardas parados em frente a porta`)
+                console.log(`Você adentra o posto avançado, porém ao chegar no escritório do capitão dos capangas percebe dois guardas parados em frente a porta`);
             }
             else if(escolha6 == "2"){
                 console.log(`Sua espera dá resultado e percebe que os guardas se dispersaram, consegue chegar à sala do capitão dos capangas e começa a vasculhar em busca de pistas`);
                 prompt("Aperte Enter para continuar");
-                console.log(`Depois de um bom tempo vasculhando, você finalmente encontra uma pista de onde a princesa está presa`)
+                console.log(`Depois de um bom tempo vasculhando, você finalmente encontra uma pista de onde a princesa está presa e sai em rumo ao seu desgaste`);
             }
         
-        }
+            }
         else if (escolha5 = "2"){
             console.log(`Você trava uma intensa batalha com o guarda, porém por se tratar de um soldado iniciante você consegue abate-lo facilmente usando sua espada. E segue rumo ao escritório de um dos capitães dos capangas de bowser.`);
             prompt ("Aperte Enter pra continuar");
@@ -229,17 +230,5 @@ if (escolha1 == "2"){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Porém por ter ignorado o guarda encontra vários soldados alertados por ele que estavam à sua espera e acaba morto encerrando sua jornada sem conseguir salvar sua amada princesa.");
 
